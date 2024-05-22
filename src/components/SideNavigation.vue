@@ -24,8 +24,8 @@ interface NavItem {
 
 const navItems = ref<NavItem[]>([
   { name: 'Home', link: '/' },
-  { name: 'About', link: '/about' },
-  { name: 'Services', link: '/services' },
+  { name: 'Projects', link: '/projects' },
+  { name: 'Tasks', link: '/tasks' },
   { name: 'Contact', link: '/contact' },
 ]);
 </script>
