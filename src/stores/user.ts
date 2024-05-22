@@ -21,8 +21,8 @@ export const useUserStore = defineStore('user', {
       try {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, user)
         console.log(response.data)
-        const { accessToken } = response.data
-        localStorage.setItem('token', accessToken)
+        const { access_token } = response.data
+        localStorage.setItem('token', access_token)
         axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`
         router.push({ name: 'admin' })
       } catch (err) {
