@@ -1,19 +1,16 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import SideNavigation from './components/SideNavigation.vue'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-
-      <SideNavigation>
-      </SideNavigation>
-  </header>
-
-  <RouterView />
+  <div class="flex">
+    <SideNav />
+    <main class="flex-1 ml-64 p-4">
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import SideNav from './components/SideNavigation.vue';
+</script>
 
+<style>
+/* Add any global styles if needed */
 </style>
