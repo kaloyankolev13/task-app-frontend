@@ -1,5 +1,5 @@
 <template>
-  <aside v-if="isAuthenticated" class="w-64 h-screen bg-gray-800 text-white fixed">
+  <aside v-if="isAuthenticated" class="w-64 h-screen bg-indigo-600 text-white fixed">
     <div class="p-4 text-lg font-semibold">
       Side Navigation
     </div>

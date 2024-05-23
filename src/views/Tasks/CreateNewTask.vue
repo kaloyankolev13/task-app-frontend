@@ -18,7 +18,7 @@ import { defineProps, defineEmits } from 'vue';
 import type { ITask } from '@/types/Task';
 
 
-const props = defineProps({
+defineProps({
   show: Boolean,
   task: {
     type: Object as () => ITask | null,

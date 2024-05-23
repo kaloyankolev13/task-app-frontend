@@ -45,7 +45,7 @@
 import { defineProps, defineEmits } from 'vue';
 import type { ITask } from '@/types/Task';
 
-const props = defineProps<{ tasks: ITask[] }>();
+defineProps<{ tasks: ITask[] }>();
 
 const emit = defineEmits(['viewTask']);
 
