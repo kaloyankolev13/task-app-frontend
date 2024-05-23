@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import { jwtDecode } from 'jwt-decode';
 
 const router = createRouter({
@@ -7,31 +6,37 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'projects',
+      component: () => import('../views/Projects/ProjectsView.vue'),
+      meta: {
+        requiresAuth: true,
+      },
+      
     },
-    // {
-    //   path: '/projects',
-    //   name: 'projects',
-    //   component: () => import('../views/ProjectsView.vue'),
-    // },
-    // {
-    //   path: '/project/:id',
-    //   name: 'project',
-    //   component: () => import('../views/ProjectView.vue'),
-    //   props: true,
-    // },
+    {
+      path: '/projects/:id',
+      name: 'project',
+      component: () => import('../views/Projects/OneProjectView.vue'),
+      props: true,
+      meta: {
+        requiresAuth: true,
+      },
+    },
         {
       path: '/tasks/',
       name: 'tasks',
       component: () => import('../views/Tasks/TasksView.vue'),
       props: true,
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: '/admin/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ '../views/Admin/LoginView.vue'),
     },
+    
     {
       path: '/admin',
       name: 'admin',
