@@ -11,7 +11,6 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
-      
     },
     {
       path: '/projects/:id',

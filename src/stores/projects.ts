@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const useProjectsStore = defineStore('projects', {
   state: () => ({
-    projects: [] as { _id: number; title: string }[],
+    projects: [] as any[],
     error: ''
   }),
   actions: {
