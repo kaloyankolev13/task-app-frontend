@@ -8,13 +8,13 @@
       <div class="flex min-w-0 flex-1 gap-x-4">
         <div class="min-w-0 flex-auto">
           <p class="text-sm font-semibold leading-6 text-gray-900">
-            {{ task.name }}
+            {{ task.title }}
           </p>
           <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-            Due on {{ task.dueDate }}
+            Due on {{ task.content }}
           </p>
           <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-            Created by {{ task.createdBy }}
+            Status {{ task.status }}
           </p>
         </div>
         <div
@@ -32,6 +32,7 @@
         <button
           type="button"
           class="rounded-md bg-blue-600 px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
+          @click="viewTask(task)"
         >
           View task
         </button>
@@ -41,14 +42,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
-import { useTasksStore } from "../../stores/tasks";
+import { defineProps, defineEmits } from 'vue';
+import type { ITask } from '@/types/Task';
 
-const projectsStore = useTasksStore();
+const props = defineProps<{ tasks: ITask[] }>();
 
-const tasks = computed(() => projectsStore.tasks);
+const emit = defineEmits(['viewTask']);
 
-onMounted(async () => {
-  await projectsStore.fetchTasks();
-});
+const viewTask = (task: ITask) => {
+  emit('viewTask', task);
+};
 </script>
+
+<style scoped>
+/* Add any additional styling here */
+</style>

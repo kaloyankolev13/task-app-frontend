@@ -31,7 +31,7 @@
   const router = useRouter();
   
   const addNewProject = () => {
-    router.push({ name: 'addProject' });
+    router.push({ name: 'new-project' });
   };
   
   const projects = computed(() => projectsStore.projects);

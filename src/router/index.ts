@@ -13,6 +13,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/projects/new',
+      name: 'new-project',
+      component: () => import('../views/Projects/AddNewProject.vue'),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
       path: '/projects/:id',
       name: 'project',
       component: () => import('../views/Projects/OneProjectView.vue'),

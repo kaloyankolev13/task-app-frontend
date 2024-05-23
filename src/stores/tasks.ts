@@ -14,6 +14,14 @@ export const useTasksStore = defineStore('tasks', {
       } catch (error:any) {
         this.error = 'Error fetching tasks: ' + error.message
       }
+    },
+    async createTask(task: any) {
+      try {
+        await axios.post(`${import.meta.env.VITE_API_URL}/tasks/${localStorage.getItem('selectedProjectId')}`, task)
+        this.fetchTasks()
+      } catch (error:any) {
+        this.error = 'Error creating task: ' + error.message
+      }
     }
   }
 })
