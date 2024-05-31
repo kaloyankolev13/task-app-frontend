@@ -51,24 +51,6 @@ const router = createRouter({
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ '../views/Admin/LoginView.vue'),
     },
-    
-    {
-      path: '/admin',
-      name: 'admin',
-      component: () => import('../views/Admin/AdminView.vue'),
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: '/admin/product/:id',
-      name: 'admin-edit',
-      component: () => import('../views/Admin/EditView.vue'),
-      props: true,
-      meta: {
-        requiresAuth: true,
-      },
-    },
     {
       // for wrong path redirect to 404
       path: '/:pathMatch(.*)*',
