@@ -39,6 +39,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/tasks/new',
+      name: 'new-task',
+      component: () => import('../views/Tasks/CreateNewTask.vue'),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
       path: '/admin/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ '../views/Admin/LoginView.vue'),

@@ -15,7 +15,7 @@ export const useProjectsStore = defineStore('projects', {
         this.error = 'Error fetching projects: ' + error.message
       }
     },
-    async createProject(projectData: { title: string, description: string, tags?: string[], tasks: string[] }) {
+    async createProject(projectData: { title: string, description: string, tags?: string[] }) {
       try {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/projects`, projectData)
         this.projects.push(response.data)

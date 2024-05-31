@@ -11,7 +11,7 @@ export const useTasksStore = defineStore('tasks', {
       try {
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/tasks/${localStorage.getItem('selectedProjectId')}`)
         this.tasks = response.data
-      } catch (error:any) {
+      } catch (error: any) {
         this.error = 'Error fetching tasks: ' + error.message
       }
     },
@@ -19,8 +19,16 @@ export const useTasksStore = defineStore('tasks', {
       try {
         await axios.post(`${import.meta.env.VITE_API_URL}/tasks/${localStorage.getItem('selectedProjectId')}`, task)
         this.fetchTasks()
-      } catch (error:any) {
+      } catch (error: any) {
         this.error = 'Error creating task: ' + error.message
+      }
+    },
+    async deleteTask(taskId: string) {
+      try {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/tasks/${taskId}`)
+        this.fetchTasks()
+      } catch (error: any) {
+        this.error = 'Error deleting task: ' + error.message
       }
     }
   }
