@@ -52,6 +52,7 @@ import { defineProps, defineEmits } from 'vue';
 import { useTasksStore } from '../../stores/tasks';
 import type { ITask } from '../../types/Task';
 
+
 const props = defineProps<{ task: ITask }>();
 const emit = defineEmits(['viewTask', 'deleteTask', 'openCreateModal']);
 const tasksStore = useTasksStore();
