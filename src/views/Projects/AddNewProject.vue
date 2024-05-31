@@ -1,18 +1,5 @@
+
 <template>
-  <div>
-
-  </div>
-</template>
-
-<script setup lang="ts">
-
-</script>
-
-<style scoped>
-
-</style>
-
-<!-- <template>
   <div class="create-project-form p-6">
     <h2 class="text-2xl font-semibold mb-4">Add New Project</h2>
     <form @submit.prevent="submitForm">
@@ -65,4 +52,4 @@ const submitForm = async () => {
 
 <style scoped>
 /* Add any additional styling here */
-</style> -->
+</style>
