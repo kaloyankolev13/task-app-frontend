@@ -11,6 +11,7 @@
 import SideNav from './components/SideNavigation.vue';
 </script>
 
+
 <style>
 /* Add any global styles if needed */
 </style>
