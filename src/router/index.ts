@@ -47,10 +47,16 @@ const router = createRouter({
       },
     },
     {
-      path: '/admin/login',
+      path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ '../views/Admin/LoginView.vue'),
     },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import(/* webpackChunkName: "register" */ '../views/Admin/RegisterView.vue'),
+    },
+
     {
       // for wrong path redirect to 404
       path: '/:pathMatch(.*)*',

@@ -41,6 +41,12 @@ export const useUserStore = defineStore('user', {
     async register(user: IUser) {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, user);
       console.log(response.data);
+      const { access_token } = response.data;
+      localStorage.setItem('token', access_token);
+      this.token = access_token;
+      axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
+      this.isAuthenticated = true;
+      router.push({ name: 'projects' });
     },
     logout() {
       this.token = '';

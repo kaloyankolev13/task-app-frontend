@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full max-w-xs m-auto my-36">
-      <ReloadButton />
-    </div>
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-xs">
+      <!-- <ReloadButton v-if="user.message" /> -->
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -33,6 +33,8 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
 </template>
 
 <script setup lang='ts'>
@@ -50,5 +52,7 @@ const registerUser = async (user: IUser) => {
 </script>
 
 <style scoped>
-/* Add any additional styles if needed */
+.min-h-screen {
+  min-height: 100vh;
+}
 </style>
