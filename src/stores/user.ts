@@ -38,6 +38,10 @@ export const useUserStore = defineStore('user', {
         console.error('Failed to fetch user:', err);
       }
     },
+    async register(user: IUser) {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, user);
+      console.log(response.data);
+    },
     logout() {
       this.token = '';
       this.isAuthenticated = false;
