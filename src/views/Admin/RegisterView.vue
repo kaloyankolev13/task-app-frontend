@@ -27,11 +27,12 @@
             class="shadow appearance-none border focus:border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password" name="password" v-model="user.password" id="password" placeholder="Password">
         </div>
-        <div class="flex items-center justify-between">
+        <div class="flex  items-center justify-between">
           <button class="btn-dark" type='button' @click='registerUser(user)'>
             Register
           </button>
-        </div>
+          </div>
+        <p>Or if you have account <RouterLink class='text-indigo-600' to='/login'>Log In</RouterLink></p>
       </form>
     </div>
   </div>

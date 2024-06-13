@@ -42,7 +42,7 @@ const submitForm = async () => {
   }
   try {
     await projectsStore.createProject(projectData)
-    router.push({ name: 'ProjectsPage' }) // Assuming you have a ProjectsPage route
+    router.push({ name: 'project' }) // Assuming you have a ProjectsPage route
   } catch (err) {
     error.value = 'Failed to create project'
     console.error('Failed to create project:', err)

@@ -47,9 +47,6 @@
     const tasksStore = useTasksStore();
 
 
-    
-    
-
     const fetchTasks = async () => {
     await tasksStore.fetchTasks();
     };

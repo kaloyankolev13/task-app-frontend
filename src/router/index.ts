@@ -70,9 +70,9 @@ router.beforeEach((to, from, next) => {
   const token = localStorage.getItem('token');
 
   if (to.meta.requiresAuth && (!token || isTokenExpired(token))) {
-    next({ name: 'login' }); // Redirect to the login page
+    next({ name: 'register' });
   } else {
-    next(); // Continue to the next route
+    next();
   }
 });
 
