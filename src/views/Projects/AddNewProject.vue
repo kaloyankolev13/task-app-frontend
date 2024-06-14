@@ -41,9 +41,10 @@ const submitForm = async () => {
     tags: tags.value.split(',').map(tag => tag.trim())
   }
   try {
-    await projectsStore.createProject(projectData)
-    router.push({ name: 'project' }) // Assuming you have a ProjectsPage route
-  } catch (err) {
+    const project = await projectsStore.createProject(projectData)
+    console.log(project);
+    router.push({ name: 'project', params: { id: project._id } })
+    } catch (err) {
     error.value = 'Failed to create project'
     console.error('Failed to create project:', err)
   }
