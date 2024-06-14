@@ -27,6 +27,7 @@
             Log In
           </button>
         </div>
+        <p>Or if you don't have account <RouterLink to='register' class='text-indigo-600'>Register</RouterLink></p>
       </form>
     <!-- </div> -->
   </div>
